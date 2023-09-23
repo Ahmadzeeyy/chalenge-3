@@ -13,12 +13,20 @@ function MainPages() {
     setItem((newData) =>newData.map((items)=>(items.id === id ? { ...items, complete: !items.complete}: items)
     ))
   }
+    function handleDeleteItem (id){
+      confirm( `Apakah yakin untuk menghapus ? ${item.task}` )
+        if(confirm){
+          setItem((newData)=>newData.filter((item)=>(item.id !== id)))
+        }else{
+          setItem(item)
+        }
+  }
 
   return (
     <main className="mx-56 my-8">
     <Header></Header>
     <FilterItem></FilterItem>
-    <ItemsList items ={item} checkedItems = {handleChecked}></ItemsList>
+    <ItemsList items ={item} checkedItems = {handleChecked} deleteItem ={handleDeleteItem}></ItemsList>
     <ButtonDelete></ButtonDelete>
     </main>
   )
