@@ -1,5 +1,10 @@
 import React from 'react'
 import LoadItem from './LoadItem'
+import data from '../data/data.json'
+import { useState } from 'react'
+
+const [filterData, setFilterData] =useState(data)
+
 
 function ItemsList({items, checkedItems,deleteItem}) {
   return (
