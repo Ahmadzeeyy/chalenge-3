@@ -1,0 +1,113 @@
+  function filterItems (filterCategroies){
+      let filteringResult;
+      if(filterCategroies === "All"){
+        filteringResult = dataFilter.map((item)=>(item))
+        setDataFilter(filteringResult)
+      }else if(filterCategroies === "Done"){
+        filteringResult = dataFilter.filter((item)=>(item.complete))
+        setDataFilter(filteringResult)
+      }else if(filterCategroies === "Todo"){
+        filteringResult = dataFilter.filter((item)=>(!item.complete))
+        setDataFilter(filteringResult)
+      }else {
+       filteringResult = newData
+      }
+  }
+
+
+==================================================================================================    ================================================================================================
+  const [newData, setNewData] = useState(data); 
+  const [dataFilter,  setDataFilter] = useState(data)
+
+  function handleChecked (id){ 
+    setNewData((newData) =>newData.map((items)=>(items.id === id ? { ...items, complete: !items.complete}: items)
+    ))
+  }
+  function handleFitlerAllItem (){ 
+    setNewData((newData)=> newData.map((item)=>(item)))
+  }
+  function handleFitlerDoneItem (){ 
+    setNewData((newData)=>newData.filter((item)=>(item.complete === true)    
+    ))
+  }
+  function handleFitlerTodoItem (){ 
+    setNewData((newData)=> newData.filter((item)=> ((item.complete === false ))
+    ))
+  }
+
+  function handleDeleteItem (id){
+    setNewData((newData)=>newData.filter((item)=>(item.id !== id    
+    ))
+  )}
+
+  function filterItems (filterCategroies){
+      let filteringResult;
+      if(filterCategroies === "All"){
+        filteringResult = dataFilter.map((item)=>(item))
+        setDataFilter(filteringResult)
+      }else if(filterCategroies === "Done"){
+        filteringResult = dataFilter.filter((item)=>(item.complete))
+        setDataFilter(filteringResult)
+      }else if(filterCategroies === "Todo"){
+        filteringResult = dataFilter.filter((item)=>(!item.complete))
+        setDataFilter(filteringResult)
+      }else {
+       filteringResult = newData
+      }
+  }
+
+
+import { Link } from "react-router-dom"
+
+
+function Search() {
+  return (
+    <section className="flex mt-5 border-2 p-8">
+      <div className="flex-col w-7/12 relative"> 
+          <input type="text" name="search" className=" py-2 ps-16 border-2 focus:outline-gray-300 w-full font-semibold text-lg rounded-md" id="" placeholder="Search Todo"/>
+            <div className="absolute top-0 ps-4 pt-3 w-14 h-[46px] bg-[#24A3B6] rounded-s-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="white" className="w-6 h-6  ">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+          </div>
+          <button type="submit" className="w-full bg-[#24A3B6] mt-5 py-2 rounded-md font-semibold text-white">Search</button>  
+      </div>
+      <div className="w-5/12 flex items-end justify-end">
+        <button as={Link} to="/add-item" className="w-1/2 rounded-md font-semibold text-white py-2 bg-[#24A3B6]">Add New Task</button>
+      </div>
+    </section>
+  )
+}
+
+export default Search
+
+
+import { Link } from "react-router-dom"
+
+
+function Search() {
+  return (
+    <section className="flex mt-5 border-2 p-8">
+      <div className="flex-col w-7/12 relative"> 
+          <input type="text" name="search" className=" py-2 ps-16 border-2 focus:outline-gray-300 w-full font-semibold text-lg rounded-md" id="" placeholder="Search Todo"/>
+            <div className="absolute top-0 ps-4 pt-3 w-14 h-[46px] bg-[#24A3B6] rounded-s-md">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="white" className="w-6 h-6  ">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+          </div>
+          <button type="submit" className="w-full bg-[#24A3B6] mt-5 py-2 rounded-md font-semibold text-white">Search</button>  
+      </div>
+      <div className="w-5/12 flex items-end justify-end">
+        <button as={Link} to="/add-item" className="w-1/2 rounded-md font-semibold text-white py-2 bg-[#24A3B6]">Add New Task</button>
+      </div>
+    </section>
+  )
+}
+
+export default Search
+
+
+      <Route path='/' element={<Home />}></Route>
+
+
+< MainPage/>
