@@ -10,7 +10,7 @@ import data  from '../data/data.json'
 function MainPages() {
   const [item, setItem] = useState(data);
     function handleChecked (id){ 
-    setItem((newData) =>newData.map((items)=>(items.id === id ? { ...items, complete: !items.complete}: items)
+    setItem((item) =>item.map((items)=>(items.id === id ? { ...items, complete: !items.complete}: items)
     ))
   }
     function handleDeleteItem (id){
@@ -22,18 +22,22 @@ function MainPages() {
         }
   }
     function handleDeletDoneItem(){ 
-    setItem((newData)=> newData.filter((item)=> ((item.complete === false ))
+    setItem((items)=> items.filter((item)=> ((item.complete === false ))
     ))
   }
     function handleDeletAllItem(){ 
     setItem([])
   }
-  
+    function handleSearchItem(dataSearch){
+      setItem((item)=>item.filter((item)=>(item.task.includes(dataSearch))));
+    }
+
+
 
   return (
     <main className="mx-56 my-8">
-    <Header></Header>
-    <FilterItem></FilterItem>
+    <Header searchItem={handleSearchItem}></Header>
+    <FilterItem items ={item} setItem={setItem}></FilterItem>
     <ItemsList items ={item} checkedItems = {handleChecked} deleteItem ={handleDeleteItem}></ItemsList>
     <ButtonDelete deletDone={handleDeletDoneItem} deletAll ={handleDeletAllItem}></ButtonDelete>
     </main>

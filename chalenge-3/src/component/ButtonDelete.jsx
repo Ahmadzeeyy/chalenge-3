@@ -1,6 +1,7 @@
 import React from 'react'
 
 function ButtonDelete({deletDone, deletAll}) {
+    
   return (
     <section>
       <div className="mt-7 gap-4 flex">
