@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
-function AddItem({item,setItem,addNewItem}) { 
+function EditItem({item,setItem,editItem}) { 
   
     const [value, setvalue] =useState("");
     function addItem(){
@@ -23,10 +23,10 @@ function AddItem({item,setItem,addNewItem}) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                   </svg>
                 </div>
-              </form>
-              <Link to="/" >
-              <button  className="py-2 font-lg bg-[#16A3B5] w-full text-white rounded-sm" onClick={addItem}>Submit</button>
+              <Link to="/"  className="py-2 font-lg bg-[#16A3B5] w-full text-white rounded-sm ">
+              <button onClick={addItem}>Submit</button>
               </Link>
+              </form>
             </div>
         </div>
       </div>
@@ -34,4 +34,5 @@ function AddItem({item,setItem,addNewItem}) {
   )
 }
 
-export default AddItem
+
+export default EditItem

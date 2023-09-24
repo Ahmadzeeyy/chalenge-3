@@ -1,8 +1,5 @@
 import React from 'react'
 import LoadItem from './LoadItem'
-import data from '../data/data.json'
-import { useState } from 'react'
-
 
 
 

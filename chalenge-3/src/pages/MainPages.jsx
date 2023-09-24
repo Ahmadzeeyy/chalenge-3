@@ -7,8 +7,7 @@ import { useState } from 'react'
 import data  from '../data/data.json'
 
 
-function MainPages() {
-  const [item, setItem] = useState(data);
+function MainPages({item, setItem}) {
     function handleChecked (id){ 
     setItem((item) =>item.map((items)=>(items.id === id ? { ...items, complete: !items.complete}: items)
     ))
@@ -38,7 +37,7 @@ function MainPages() {
     <main className="mx-56 my-8">
     <Header searchItem={handleSearchItem}></Header>
     <FilterItem items ={item} setItem={setItem}></FilterItem>
-    <ItemsList items ={item} checkedItems = {handleChecked} deleteItem ={handleDeleteItem}></ItemsList>
+    <ItemsList items ={item} checkedItems = {handleChecked} deleteItem ={handleDeleteItem} ></ItemsList>
     <ButtonDelete deletDone={handleDeletDoneItem} deletAll ={handleDeletAllItem}></ButtonDelete>
     </main>
   )

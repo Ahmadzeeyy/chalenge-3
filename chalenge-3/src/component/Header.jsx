@@ -20,7 +20,7 @@ function Header({searchItem}) {
               <button className="py-2 font-lg bg-[#16A3B5] w-full text-white rounded-sm " onClick={()=>searchItem(dataFilter)}>Search</button>
             </div>
               <div className=" flex flex-col justify-end items-end w-1/2">
-              <Link to={"/add-item"} className="py-2 font-lg bg-[#16A3B5] w-2/4 text-white rounded-sm">Add New </Link>
+              <Link to={'add-item'} className="py-2 font-lg bg-[#16A3B5] w-2/4 text-white rounded-sm text-center">Add New </Link>
             </div>
         </div>
       </div>
